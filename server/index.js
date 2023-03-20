@@ -21,7 +21,7 @@ app.post("/todos", async (req, res) => {
 
     res.json(newTodo.rows[0]);
   } catch (err) {
-    console.log(err.message);
+    console.error(err.message);
   }
 });
 
@@ -32,7 +32,7 @@ app.get("/todos", async (req, res) => {
     res.json(allTodos.rows);
     //no RETURNING * because the purpose of SELECT is to give data back
   } catch (err) {
-    console.log(err.message);
+    console.error(err.message);
   }
 });
 
@@ -45,12 +45,12 @@ app.get("/todos/:id", async (req, res) => {
     ]);
     res.json(oneTodo.rows);
   } catch (err) {
-    console.log(err.message);
+    console.error(err.message);
   }
 });
 
 //Update a todo
-app.put("/todos/:id", async (req, res) => {
+app.put("/todos/update/:id", async (req, res) => {
   try {
     const { id } = req.params;
     const { description } = req.body;
@@ -60,7 +60,7 @@ app.put("/todos/:id", async (req, res) => {
     );
     res.json("Todo was updated");
   } catch (err) {
-    console.log(err.message);
+    console.error(err.message);
   }
 });
 
@@ -73,10 +73,10 @@ app.delete("/todos/:id", async (req, res) => {
     ]);
     res.json("Todo was deleted");
   } catch (err) {
-    console.log(err.message);
+    console.error(err.message);
   }
 });
 
-app.listen(3000, () => {
-  console.log("Server has started on 3000");
+app.listen(8000, () => {
+  console.log("Server has started on 8000");
 });
