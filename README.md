@@ -1,2 +1,2 @@
-# PERN_Todo
-A Todo list made using PERN - PostgreSQL, Express, React and Node
+# Calendar Planner
+Developed a REST API microservice to add events, edit and delete events from a planner.
